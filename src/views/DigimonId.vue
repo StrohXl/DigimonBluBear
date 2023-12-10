@@ -3,7 +3,6 @@ import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { dataDigimon } from '../stores/dataDigimon'
 import CardDigimonId from '@/components/CardDigimonId.vue'
-import CardDigimon from '@/components/CardDigimon.vue'
 import NextEvolution from '@/components/NextEvolution.vue'
 import PriorEvolution from '@/components/PriorEvolution.vue'
 
