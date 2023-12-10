@@ -4,7 +4,7 @@ import { dataDigimon } from '../stores/dataDigimon'
 import CardDigimonVue from '@/components/CardDigimon.vue'
 import { pageHome } from '@/stores/page'
 import { useRouter } from 'vue-router'
-import "vue-awesome-paginate/dist/style.css";
+import 'vue-awesome-paginate/dist/style.css'
 const dataDigimonStore = dataDigimon()
 const router = useRouter()
 const page = ref(1)
@@ -42,6 +42,8 @@ onMounted(async () => {
         :max-pages-shown="3"
         v-model="page"
         :on-click="onClickHandler"
+        :show-breakpoint-buttons="false"
+        :hide-prev-next-when-ends="true"
       />
     </div>
   </div>
