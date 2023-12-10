@@ -16,9 +16,11 @@ const onClickHandler = (page: number) => {
     <vue-awesome-paginate
       :total-items="1422"
       :items-per-page="20"
-      :max-pages-shown="3"
+      :max-pages-shown="4"
       v-model="pageHome().page"
       :on-click="onClickHandler"
+      :show-breakpoint-buttons="false"
+      :hide-prev-next-when-ends="true"
     />
   </div>
 </template>

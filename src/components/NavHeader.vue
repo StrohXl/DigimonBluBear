@@ -38,7 +38,7 @@ const openMenuMobile = ref(false)
       </ul>
     </nav>
     <template v-if="openMenuMobile">
-      <nav class="p-5 absolute bg-cyan-950 justify-between menuMobile">
+      <nav class="p-5 h-screen w-full fixed bg-cyan-950 justify-between menuMobile">
         <div class="flex justify-between items-center h-20 pr-5">
           <h1 @click="openMenuMobile = false" class="cursor-pointer font-bold font-serif text-xl">
             <RouterLink to="/"> DigimonWikiBlue </RouterLink>
@@ -73,7 +73,6 @@ const openMenuMobile = ref(false)
 .menuMobile {
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100vh;
+  overflow: hidden;
 }
 </style>
