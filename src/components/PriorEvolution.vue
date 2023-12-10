@@ -5,33 +5,35 @@ import CardDigimon from './CardDigimon.vue'
 </script>
 
 <template>
-  <h2
-    class="py-10 mt-10 text-center text-xl font-semibold"
-    v-if="dataDigimon().digimonId?.nextEvolutions?.length > 0"
-  >
-    Prior Evolutions
-  </h2>
-  <div class="grid gap-3 grid-cols-2 px-5">
-    <div
-      v-for="(item, index) in dataDigimon().digimonId.nextEvolutions"
-      :key="item.id"
-      :class="index > 6 && ` hidden`"
+  <div>
+    <h2
+      class="my-10 pb-3 text-center text-xl font-bold md:text-left md:text-2xl md:border-b-2 md:mb-5 lg:text-3xl lg:my-12 lg:mb-6"
+      v-if="dataDigimon().digimonId?.nextEvolutions?.length > 0"
     >
-      <template v-if="index < limitCards().limitPrior">
-        <CardDigimon :urlImage="item.image" :name="item.digimon" :id="item.id" />
-      </template>
+      Prior Evolutions
+    </h2>
+    <div class="grid gap-3 grid-cols-2 px-2.5 md:grid-cols-3">
+      <div
+        v-for="(item, index) in dataDigimon().digimonId.nextEvolutions"
+        :key="item.id"
+        :class="index > 6 && ` hidden`"
+      >
+        <template v-if="index < limitCards().limitPrior">
+          <CardDigimon :urlImage="item.image" :name="item.digimon" :id="item.id" />
+        </template>
+      </div>
     </div>
-  </div>
-  <div class="grid justify-center">
-    <button
-      v-if="
-        limitCards().limitPrior < dataDigimon().digimonId?.nextEvolutions?.length &&
-        limitCards().limitPrior == 4
-      "
-      @click="limitCards().updateLimitPrior(100)"
-      class="text-sm uppercase hover:shadow-lg my-10 px-20 py-1.5 rounded-sm bg-slate-800 text-white"
-    >
-      See more
-    </button>
+    <div class="grid justify-center">
+      <button
+        v-if="
+          limitCards().limitPrior < dataDigimon().digimonId?.nextEvolutions?.length &&
+          limitCards().limitPrior == 4
+        "
+        @click="limitCards().updateLimitPrior(100)"
+        class="text-sm uppercase hover:shadow-lg my-10 px-20 py-1.5 rounded-sm bg-slate-800 text-white"
+      >
+        See more
+      </button>
+    </div>
   </div>
 </template>
