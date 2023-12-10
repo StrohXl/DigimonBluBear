@@ -7,14 +7,14 @@ import CardDigimon from './CardDigimon.vue'
 <template>
   <div>
     <h2
-      class="my-10 pb-3 text-center text-xl font-bold md:text-left md:text-2xl md:border-b-2 md:mb-5 lg:text-3xl lg:my-12 lg:mb-6"
-      v-if="dataDigimon().digimonId?.nextEvolutions?.length > 0"
+      class="mt-10 mb-10 pb-3 text-xl font-bold md:text-2xl border-b-2 md:mb-5 lg:text-3xl lg:my-12 lg:mb-6"
+      v-if="dataDigimon().digimonId?.priorEvolutions?.length > 0"
     >
       Prior Evolutions
     </h2>
-    <div class="grid gap-3 grid-cols-2 px-2.5 md:grid-cols-3">
+    <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
       <div
-        v-for="(item, index) in dataDigimon().digimonId.nextEvolutions"
+        v-for="(item, index) in dataDigimon().digimonId.priorEvolutions"
         :key="item.id"
         :class="index > 6 && ` hidden`"
       >
@@ -26,7 +26,7 @@ import CardDigimon from './CardDigimon.vue'
     <div class="grid justify-center">
       <button
         v-if="
-          limitCards().limitPrior < dataDigimon().digimonId?.nextEvolutions?.length &&
+          limitCards().limitPrior < dataDigimon().digimonId?.priorEvolutions?.length &&
           limitCards().limitPrior == 4
         "
         @click="limitCards().updateLimitPrior(100)"

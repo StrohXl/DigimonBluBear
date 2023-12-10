@@ -20,9 +20,9 @@ onMounted(async () => {
 
 <template>
   <div
-    class="pb-10 bg-neutral-100 pt-10 px-5 sm:pt-5 sm:px-10 md:pt-8 md:px-20 lg:pt-10 lg:px-28 xl:px-36 2xl:px-64"
+    class="pb-10 rounded-md px-5 bg-white pt-10 mx-5 sm:pt-5 sm:mx-8 md:px-12 md:pt-8  md:mx-16 lg:mt-10 lg:pt-10 lg:mx-24 xl:mx-32 2xl:mx-60"
   >
-    <h1 class="font-serif mb-6 text-xl sm:text-2xl md:text-3xl lg:text-4xl">Digimons</h1>
+    <h1 class="border-b-2  font-serif mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Digimons</h1>
     <div
       class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 justify-center gap-x-3 gap-y-5"
     >

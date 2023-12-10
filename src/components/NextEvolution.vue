@@ -7,12 +7,12 @@ import CardDigimon from './CardDigimon.vue'
 <template>
   <div>
     <h2
-      class="my-10 pb-3 text-center text-xl font-bold md:text-left md:text-2xl md:border-b-2 md:mb-5 lg:text-3xl lg:my-12 lg:mb-6"
+      class="my-10 mb-8 pb-3 text-xl font-bold  md:text-2xl border-b-2 lg:text-3xl lg:my-12 lg:mb-6"
       v-if="dataDigimon().digimonId?.nextEvolutions?.length > 0"
     >
       Next Evolutions
     </h2>
-    <div class="grid gap-5 grid-cols-2 px-2.5 md:grid-cols-3">
+    <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
       <div
         v-for="(item, index) in dataDigimon().digimonId.nextEvolutions"
         :key="item.id"
