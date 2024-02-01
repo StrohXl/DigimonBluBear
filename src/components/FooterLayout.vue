@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-cyan-950 py-4 text-white grid px-5">
     <h2 class="text-center text-2xl py-2 font-semibold">DigimonWikiBlue</h2>
-    <ul class="grid gap-2 text-lg my-8 text-neutral-400 sm:flex sm:justify-center">
+    <ul class="grid gap-2 text-center text-lg my-8 text-neutral-400 sm:flex justify-center">
       <li class="cursor-pointer hover:text-white">
         <RouterLink to="/" :class="router.path == '/' && ' text-white'"> Home </RouterLink>
       </li>

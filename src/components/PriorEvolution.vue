@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import { dataDigimon } from '../stores/dataDigimon'
 import { limitCards } from '../stores/limit'
 import CardDigimon from './CardDigimon.vue'
+onMounted(()=>{
+  limitCards().updateLimitPrior(4)
+})
 </script>
 
 <template>
@@ -25,14 +29,18 @@ import CardDigimon from './CardDigimon.vue'
     </div>
     <div class="grid justify-center">
       <button
-        v-if="
-          limitCards().limitPrior < dataDigimon().digimonId?.priorEvolutions?.length &&
-          limitCards().limitPrior == 4
-        "
+        v-if="limitCards().limitPrior == 4 && dataDigimon().digimonId.priorEvolutions.length > 4"
         @click="limitCards().updateLimitPrior(100)"
-        class="text-sm uppercase hover:shadow-lg my-10 px-20 py-1.5 rounded-sm bg-slate-800 text-white"
+        class="text-sm 2xl:text-base hover:shadow-lg my-10 px-20 py-1.5 rounded-md font-bold bg-slate-800 text-white"
       >
         See more
+      </button>
+      <button
+        v-if="limitCards().limitPrior == 100"
+        @click="limitCards().updateLimitPrior(4)"
+        class="text-sm 2xl:text-base hover:shadow-lg my-10 px-20 py-1.5 rounded-md font-bold bg-slate-800 text-white"
+      >
+        See less
       </button>
     </div>
   </div>

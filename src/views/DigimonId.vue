@@ -32,7 +32,7 @@ watch(
 </script>
 <template>
   <div
-    class="rounded-md pt-10 mx-5 md:mx-6 lg:mx-14 xl:mx-20 lg:mt-5 xl:mt-8 2xl:mx-56 2xl:mt-14 bg-white pb-20 md:grid grid-cols-2 md:pt-14 text-neutral-700"
+    class="rounded-md pt-10 mx-5 md:mx-6 lg:mx-14 lg:mt-5 xl:mt-8 xl:max-w-6xl xl:mx-auto 2xl:max-w-7xl 2xl:mt-14 bg-white pb-20 md:grid grid-cols-2 md:pt-14 text-neutral-700"
   >
     <h1 class="px-5 text-4xl hidden col-span-2 row-start-1 md:block lg:text-5xl lg:px-10">
       {{ dataDigimon().digimonId.name }}

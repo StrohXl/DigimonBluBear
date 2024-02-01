@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import DigimonId from '../views/DigimonId.vue'
 import PageDigimon from '@/views/PageDigimon.vue'
+import LevelDigimon from '@/views/LevelDigimon.vue'
 const router = createRouter({
   scrollBehavior() {
     return { top: 0 }
@@ -17,6 +18,11 @@ const router = createRouter({
       path: '/digimon/:id',
       props: true,
       component: DigimonId
+    },
+    {
+      path: '/level/:id',
+      props: true,
+      component: LevelDigimon
     },
     {
       path: '/page/:id',

@@ -20,11 +20,11 @@ onMounted(async () => {
 
 <template>
   <div
-    class="pb-10 rounded-md px-5 bg-white pt-10 mx-5 sm:pt-5 sm:mx-8 md:px-12 md:pt-8  md:mx-16 lg:mt-10 lg:pt-10 lg:mx-24 xl:mx-32 2xl:mx-60"
+    class="pb-5 rounded-md px-5 xl:!mx-auto xl:max-w-6xl 2xl:max-w-7xl bg-white pt-5 mx-5 lg:px-10 sm:pt-5 md:pt-8 lg:mt-10 lg:pt-10 lg:mx-14"
   >
-    <h1 class="border-b-2  font-serif mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Digimons</h1>
+    <h1 class="font-serif mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Digimons</h1>
     <div
-      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 justify-center gap-x-3 gap-y-5"
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 justify-center gap-x-3 gap-y-5"
     >
       <CardDigimonVue
         v-for="item in dataDigimonStore.dataDigimon"
