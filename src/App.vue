@@ -5,7 +5,7 @@ import FooterLayout from './components/FooterLayout.vue'
 
 <template>
   <NavHeader />
-  <main class="py-10">
+  <main class="py-10 pt-20">
     <RouterView />
   </main>
   <FooterLayout />
