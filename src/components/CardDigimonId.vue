@@ -19,19 +19,17 @@ defineProps({
     </template>
     <h2 class="border-t-2 py-3 text-center text-lg font-semibold">Information</h2>
     <ul class="px-5 pb-5 text-md grid gap-2">
-      <li>
+      <li class="flex gap-2">
         Level:
-        <span
-          class="font-semibold"
-          v-for="(item, index) in dataDigimon().digimonId.levels"
-          :key="item.id"
-        >
-          <ComponentLi
-            :index="index"
-            :length="dataDigimon().digimonId.levels.length"
-            :value="item.level"
-          />
-        </span>
+        <div class="flex gap-2 text-sm xl:text-base flex-wrap">
+          <span
+            class="font-semibold cursor-pointer border-2 transition-colors duration-400 hover:bg-white hover:text-cyan-950 border-cyan-950 bg-cyan-950 text-white rounded-md px-3"
+            v-for="item in dataDigimon().digimonId.levels"
+            :key="item.id"
+          >
+            <RouterLink :to="'/level/' + item.level"> {{ item.level }}</RouterLink>
+          </span>
+        </div>
       </li>
       <li>
         XAntibody:
@@ -54,19 +52,17 @@ defineProps({
           />
         </span>
       </li>
-      <li>
+      <li class="flex gap-2">
         Attributes:
-        <span
-          class="font-semibold"
-          v-for="(item, index) in dataDigimon().digimonId.attributes"
-          :key="item.id"
-        >
-          <ComponentLi
-            :index="index"
-            :length="dataDigimon().digimonId.attributes.length"
-            :value="item.attribute"
-          />
-        </span>
+        <div class="flex gap-2 flex-wrap text-sm xl:text-base">
+          <span
+            class="font-semibold cursor-pointer border-2 transition-colors duration-400 hover:bg-white hover:text-cyan-950 border-cyan-950 bg-cyan-950 text-white rounded-md px-3"
+            v-for="item in dataDigimon().digimonId.attributes"
+            :key="item.id"
+          >
+            <RouterLink :to="'/attribute/' + item.attribute"> {{ item.attribute }}</RouterLink>
+          </span>
+        </div>
       </li>
       <li>
         Fields:

@@ -18,7 +18,7 @@ onMounted(()=>{
     </h2>
     <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
       <div
-        v-for="(item, index) in dataDigimon().digimonId.priorEvolutions"
+        v-for="(item, index) in dataDigimon().digimonId?.priorEvolutions"
         :key="item.id"
         :class="index > 6 && ` hidden`"
       >
@@ -29,7 +29,7 @@ onMounted(()=>{
     </div>
     <div class="grid justify-center">
       <button
-        v-if="limitCards().limitPrior == 4 && dataDigimon().digimonId.priorEvolutions.length > 4"
+        v-if="limitCards().limitPrior == 4 && dataDigimon().digimonId?.priorEvolutions?.length > 4"
         @click="limitCards().updateLimitPrior(100)"
         class="text-sm 2xl:text-base hover:shadow-lg my-10 px-20 py-1.5 rounded-md font-bold bg-slate-800 text-white"
       >

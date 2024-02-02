@@ -37,7 +37,7 @@ onMounted(async () => {
 
     <div class="flex justify-center mt-10">
       <vue-awesome-paginate
-        :total-items="1422"
+        :total-items="pageHome().totalItems"
         :items-per-page="20"
         :max-pages-shown="3"
         v-model="page"

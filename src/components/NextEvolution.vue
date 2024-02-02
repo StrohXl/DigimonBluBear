@@ -29,7 +29,7 @@ onMounted(() => {
     </div>
     <div class="grid justify-center">
       <button
-        v-if="limitCards().limitNext == 4 && dataDigimon().digimonId.nextEvolutions.length > 4"
+        v-if="limitCards().limitNext == 4 && dataDigimon().digimonId?.nextEvolutions?.length > 4"
         @click="limitCards().updateLimitNext(100)"
         class="text-sm 2xl:text-base hover:shadow-lg my-10 px-20 py-1.5 rounded-md font-bold bg-slate-800 text-white"
       >

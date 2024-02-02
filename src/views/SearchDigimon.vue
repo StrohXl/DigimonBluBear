@@ -14,7 +14,7 @@ watch(
     if (params.params.page == undefined) {
       await pageHome().updatePage(1)
     }
-    dataDigimonStore.getDataDigimon(`level=${newValue}`)
+    dataDigimonStore.getDataDigimon(`name=${newValue}`)
   }
 )
 watch(
@@ -27,7 +27,7 @@ watch(
       await pageHome().updatePage(1)
 
     }
-    dataDigimonStore.getDataDigimon(`level=${params.params.id}`)
+    dataDigimonStore.getDataDigimon(`name=${params.params.id}`)
   }
 )
 
@@ -37,7 +37,7 @@ onMounted(async () => {
   } else {
     await pageHome().updatePage(1)
   }
-  dataDigimonStore.getDataDigimon(`level=${params.params.id}`)
+  dataDigimonStore.getDataDigimon(`name=${params.params.id}`)
 })
 </script>
 

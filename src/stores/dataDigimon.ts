@@ -9,9 +9,10 @@ export const dataDigimon = defineStore('dataDigimon', {
     digimonId: {} as Digimon
   }),
   actions: {
-    async getDataDigimon() {
+    async getDataDigimon(params?:string) {
       try {
-        const { data } = await axios.get(url + `?page=${pageHome().page - 1}&pageSize=20`)
+        const { data } = await axios.get(url + `?page=${pageHome().page - 1}&pageSize=20&${params}`)
+        pageHome().updateTotalItems(data.pageable.totalElements)
         this.dataDigimon = data.content
       } catch (error) {
         console.log(error)

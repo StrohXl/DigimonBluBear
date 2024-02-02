@@ -2,10 +2,10 @@
 import Field from '../../interface/listDigimonLevel'
 import { onMounted, ref } from 'vue'
 import type { Ref } from 'vue'
-import GetListDigimonLevel from '../../services/getListDigimonLevel'
+import GetListDigimonAttribute from '../../services/getListDigimonAttribute'
 const data: Ref<Field[]> = ref([])
 const getDigimons = async () => {
-  const list = await GetListDigimonLevel()
+  const list = await GetListDigimonAttribute()
   if (list) {
     data.value = list
   }
@@ -17,7 +17,7 @@ const openMenu = ref(false)
 </script>
 <template>
   <div @mouseenter="openMenu = true" @mouseleave="openMenu = false" class="relative">
-    <div class="flex gap-1">Level</div>
+    <div class="flex gap-1">Attribute</div>
     <div @mouseenter="openMenu = true" v-if="openMenu" class="absolute py-2 top-6 -right-10 bg-">
       <div
         class="rounded-md dark:text-white text-black py-1 mt-4 shadow-2xl border-gray-700 dark:bg-gray-800 bg-white"
@@ -31,7 +31,7 @@ const openMenu = ref(false)
             <RouterLink
               @click="openMenu = false"
               class="w-full block"
-              :to="`/level/${item.name}`"
+              :to="`/attribute/${item.name}`"
               >{{ item.name }}</RouterLink
             >
           </li>
