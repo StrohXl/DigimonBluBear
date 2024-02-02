@@ -3,7 +3,7 @@ import Field from '../../interface/listDigimonLevel'
 import { onMounted, ref } from 'vue'
 import type { Ref } from 'vue'
 import GetListDigimonAttribute from '../../services/getListDigimonAttribute'
-const data: Ref<Field[]> = ref([])
+const data = ref()
 const getDigimons = async () => {
   const list = await GetListDigimonAttribute()
   if (list) {
