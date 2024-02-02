@@ -3,7 +3,7 @@ import Field from '../../interface/listDigimonLevel'
 import { onMounted, ref } from 'vue'
 import type { Ref } from 'vue'
 import GetListDigimonLevel from '../../services/getListDigimonLevel'
-const data: Ref<Field[]> = ref([])
+const data = ref()
 const getDigimons = async () => {
   const list = await GetListDigimonLevel()
   if (list) {
@@ -24,7 +24,9 @@ const openMenu = ref(false)
       >
         <ul class="p-3">
           <li
-            :class="`hover:bg-gray-200 py-1 rounded-sm font-medium px-3 w-52 ${['Super Ultimate','Digitama'].includes(item.name) && ' hidden'}`"
+            :class="`hover:bg-gray-200 py-1 rounded-sm font-medium px-3 w-52 ${
+              ['Super Ultimate', 'Digitama'].includes(item.name) && ' hidden'
+            }`"
             v-for="item in data"
             v-bind:key="item.id"
           >
